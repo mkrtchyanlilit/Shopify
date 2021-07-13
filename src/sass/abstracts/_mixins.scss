@@ -7,3 +7,9 @@
 @mixin dynamicAppearance($time) {
     animation: dynamicAppearance $time ease forwards;
 }
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
