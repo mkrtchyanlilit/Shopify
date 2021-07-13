@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    flex: 0 0 80px;
+
+    background-color: red;
+  }
+}
