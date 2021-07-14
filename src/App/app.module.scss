@@ -1,70 +1,17 @@
-@use "/src/sass/abstracts/mixin";
-
-.app {
+.container {
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  &__header {
-    flex: 0 0 80px;
-    background-color: red;
-  }
-  &__main {
+  overflow: auto;
+  padding: 0 20px;
+
+  .main {
     flex: 1;
-    padding: 20px;
   }
   .categories {
     display: flex;
-    list-style: none;
-    margin: 0;
-    display: grid;
-    display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    .category {
-      flex: 1 1 30%;
-      height: 250px;
-      border: 1px solid #000;
-      overflow: hidden;
-      cursor: pointer;
-      &__wrapper {
-        position: relative;
-        transition: 1s;
-        height: 100%;
-        width: 100%;
-        .content {
-          position: absolute;
-          height: 40%;
-          width: 150px;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: rgba(255, 255, 255, 0.9);
-
-         
-          @include mixin.flexCenter;
-          flex-direction: column;
-
-          .title {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-          }
-        }
-
-        .image {
-          transition: 0.5s;
-          height: 100%;
-          width: 100%;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        &:hover > .image {
-          transform: scale(1.1);
-        }
-      }
-    }
   }
 }
