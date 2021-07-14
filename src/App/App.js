@@ -1,38 +1,19 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-// COMPONENTS
-import CategoryItem from "../components/category-item/CategoryItem.component";
+import { Switch, Route } from "react-router-dom";
+// LAYOUT
+import Header from "src/layout/header/Header.layout";
 // STYLES
 import styles from "./app.module.scss";
-
-import Header from "../layout/header/Header.layout";
+// PAGES
+import HomePage from "src/pages/home/Home.page";
 
 const App = () => {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get("categories");
-        setCategories(response.data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    getData();
-  }, []);
-
-  const sortedCategories = categories.sort((a, b) => a.id - b.id);
-
   return (
     <div className={styles.container}>
       <Header />
       <main className={styles.main}>
-        <ul className={styles.categories}>
-          {sortedCategories.map((category) => {
-            return <CategoryItem key={category._id} category={category} />;
-          })}
-        </ul>
+        <Switch>
+          <Route component={HomePage} path="/home" />
+        </Switch>
       </main>
     </div>
   );
