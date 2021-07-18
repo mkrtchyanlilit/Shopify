@@ -21,7 +21,7 @@ const Header = () => {
         <Link to="/contacts" className={styles.item}>
           CONTACTS
         </Link>
-        <Link to="/auth" className={styles.item}>
+        <Link to="/signin" className={styles.item}>
           SIGN IN
         </Link>
         <span className={styles.item}>

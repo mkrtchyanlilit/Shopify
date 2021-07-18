@@ -1,7 +1,7 @@
 // COMPONENTS
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CategoryItem from "src/components/category-item/CategoryItem.component";
+import CategoryItem from "src/pages/home/components/category-item/CategoryItem.component";
 
 // STYLES
 import styles from "./home.module.scss";
