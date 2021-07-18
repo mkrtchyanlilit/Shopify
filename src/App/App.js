@@ -5,7 +5,7 @@ import Header from "src/layout/header/Header.layout";
 import styles from "./app.module.scss";
 // PAGES
 import HomePage from "src/pages/home/Home.page";
-import SignInPage from "src/pages/signin/SignIn.page";
+import AuthPage from "src/pages/auth/Auth.page";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <main className={styles.main}>
         <Switch>
           <Route component={HomePage} path="/home" />
-          <Route component={SignInPage} path="/signin" />
+          <Route component={AuthPage} path="/auth" />
           <Redirect exact from="/" to="/home" />
         </Switch>
       </main>

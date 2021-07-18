@@ -15,13 +15,13 @@ const Header = () => {
     <header className={styles.container}>
       <CrownSVG className="u-cursor--pointer" onClick={handleClick} />
       <nav className={styles.nav}>
-        <Link to="/shop" className={styles.item}>
+      <Link to="/auth" className={styles.item}>
           SHOP
         </Link>
         <Link to="/contacts" className={styles.item}>
           CONTACTS
         </Link>
-        <Link to="/signin" className={styles.item}>
+        <Link to="/auth" className={styles.item}>
           SIGN IN
         </Link>
         <span className={styles.item}>

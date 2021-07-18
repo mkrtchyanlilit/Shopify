@@ -1,18 +1,24 @@
+@mixin shrinkLabel {
+  top: 0;
+  opacity: 1;
+  font-size: 13px;
+}
+
 .container {
   position: relative;
   margin-bottom: 30px;
+  margin-top: 12px;
 
   .input {
     border-bottom: 1px solid black;
-    height: 50px;
+    height: 40px;
     width: 100%;
     &:focus {
       outline: none;
       box-shadow: none;
 
       ~ .label {
-        top: 0;
-        opacity: 1;
+        @include shrinkLabel;
       }
     }
   }
@@ -26,8 +32,7 @@
     opacity: 0.5;
 
     &.active {
-      top: 0;
-      opacity: 1;
+      @include shrinkLabel;
     }
   }
 }

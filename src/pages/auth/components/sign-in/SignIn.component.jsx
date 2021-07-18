@@ -1,9 +1,8 @@
 import { useState } from "react";
+import axios from "axios";
+// BASE COMPONENTS
 import Button from "src/components/button/Button.component";
 import Input from "src/components/input/Input.component";
-import styles from "./signin.module.scss";
-
-import axios from "axios";
 
 const SignIn = () => {
   const [inputState, setInputState] = useState({});
@@ -21,27 +20,27 @@ const SignIn = () => {
     console.log(result);
   };
   return (
-    <div className={styles.container}>
-      <form onSubmit={handleSubmit}>
-        <Input
-          name="email"
-          type="email"
-          required
-          label="Email"
-          onChange={handleInput}
-          value={inputState.email}
-        />
-        <Input
-          name="password"
-          type="password"
-          required
-          label="Password"
-          value={inputState.password}
-          onChange={handleInput}
-        />
-        <Button type="submit">Sign In</Button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <h1>I already have an account</h1>
+      <p>Sign in with your email and password</p>
+      <Input
+        name="email"
+        type="email"
+        required
+        label="Email"
+        onChange={handleInput}
+        value={inputState.email}
+      />
+      <Input
+        name="password"
+        type="password"
+        required
+        label="Password"
+        value={inputState.password}
+        onChange={handleInput}
+      />
+      <Button type="submit">Sign In</Button>
+    </form>
   );
 };
 
