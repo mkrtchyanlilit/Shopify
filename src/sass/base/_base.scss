@@ -1,5 +1,9 @@
+@use "src/sass/abstracts/mixin";
+@use "src/sass/abstracts/variables";
+
 * {
     box-sizing: border-box;
+    @include mixin.customScrollbar(variables.$color-dark--main);
 }
 
 body {
