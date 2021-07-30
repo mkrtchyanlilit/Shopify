@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 // LAYOUT
 import Header from "src/layout/header/Header.layout";
@@ -9,7 +10,9 @@ import AuthPage from "src/pages/auth/Auth.page";
 import ShopPage from "src/pages/shop/Shop.page";
 import ShopCategory from "src/pages/shop-category/ShopCategory.component";
 
-const App = () => {
+// import { appIsLoading } from "src/redux/common/common.reducer";
+
+const App = (props) => {
   return (
     <div className={styles.container}>
       <Header />
@@ -17,7 +20,7 @@ const App = () => {
         <Switch>
           <Route component={HomePage} path="/home" />
           <Route component={AuthPage} path="/auth" />
-          <Route exact component={ShopPage} path="/shop" />
+          <Route component={ShopPage} exact path="/shop" />
           <Route component={ShopCategory} path="/shop/:category" />
           <Redirect exact from="/" to="/home" />
         </Switch>

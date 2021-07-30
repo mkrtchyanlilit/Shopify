@@ -8,10 +8,30 @@ const Shop = ({ history }) => {
   const [shopState, setShopState] = useState([]);
 
   useEffect(() => {
-    axios.get("shop").then((result) => {
-      const { data } = result;
-      setShopState(data);
-    });
+    const getShopData = async () => {
+      try {
+          const result = await axios.get("shop");
+          const { data } = result;
+          setShopState(data);
+      } catch (error) {
+          console.log(error.message);
+      } finally {
+          // TODO --> TURN OFF LOADER
+      }
+  };
+  getShopData();
+
+  // TODO --> REVIEW
+  // (async () => {
+  //     const result = await axios.get("shop");
+  //     const { data } = result;
+  //     setShopState(data);
+  // })();
+
+  // axios.get("shop").then((result) => {
+  //     const { data } = result;
+  //     setShopState(data);
+  // });
   }, []);
 
   const categories = ["hats", "sneakers", "womens", "mens", "jackets"];
