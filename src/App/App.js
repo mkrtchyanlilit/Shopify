@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 // LAYOUT
 import Header from "src/layout/header/Header.layout";

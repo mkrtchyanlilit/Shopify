@@ -11,9 +11,38 @@
     white-space: pre;
 
     .item {
-      min-width: 40px;
+      position: relative;
       text-decoration: none;
       color: inherit;
+
+      .cart {
+        user-select: none;
+        cursor: pointer;
+
+        .bag {
+          height: 30px;
+        }
+
+        .count {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          // transform: translate(-50%, -50%);
+          transform: translateX(-50%) translateY(-50%);
+          font-size: 14px;
+        }
+      }
+
+      .cartDropdown {
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        width: 300px;
+        height: 400px;
+        border: 1px solid #000;
+        border-radius: 3px;
+        background-color: #fff;
+      }
     }
 
     & > :not(:last-child) {
@@ -22,7 +51,5 @@
     }
   }
 
-  .bag {
-    height: 25px;
-  }
+ 
 }
