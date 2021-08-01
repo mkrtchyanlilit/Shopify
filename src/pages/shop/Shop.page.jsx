@@ -1,22 +1,25 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ShopItems from "./components/shop-items/ShopItems.component";
+import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
 
 import styles from "./shop.module.scss";
 
 const Shop = ({ history }) => {
   const [shopState, setShopState] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getShopData = async () => {
       try {
+        setIsLoading(true)
           const result = await axios.get("shop");
           const { data } = result;
           setShopState(data);
       } catch (error) {
           console.log(error.message);
       } finally {
-          // TODO --> TURN OFF LOADER
+        setIsLoading(false)
       }
   };
   getShopData();
@@ -42,6 +45,7 @@ const Shop = ({ history }) => {
 };
 
   return (
+    <WrapperLoader isLoading={isLoading}>
     <div className={styles.container}>
       {categories.map((category) => {
         const filteredData = shopState.filter(
@@ -57,6 +61,7 @@ const Shop = ({ history }) => {
         );
       })}
     </div>
+    </WrapperLoader>
   );
 };
 

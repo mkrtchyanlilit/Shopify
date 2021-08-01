@@ -1,0 +1,7 @@
+@use 'src/sass/abstracts/_mixin.scss';
+.container {
+    flex: 1;
+    @include mixin.flexCenter;
+    color: red;
+    font-size: 32px;
+}
