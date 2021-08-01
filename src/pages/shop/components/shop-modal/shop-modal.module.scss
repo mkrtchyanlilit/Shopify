@@ -1,0 +1,18 @@
+@use "src/sass/abstracts/mixin";
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    @include mixin.flexCenter;
+    .content {
+        height: 50%;
+        width: 700px;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 10px 35px;
+        text-align: center;
+    }
+}
