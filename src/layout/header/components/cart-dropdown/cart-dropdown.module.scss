@@ -11,16 +11,29 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    .cartItem {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    .itemsWrapper {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
         gap: 10px;
+        .cartItem {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            .image {
+                width: 100px;
+                object-fit: cover;
+            }
+        }
+    }
+    .emptyWrapper {
+        height: 100%;
+        display: flex;
         justify-content: center;
         align-items: center;
-        .image {
-            width: 100px;
-            object-fit: cover;
-        }
     }
 }

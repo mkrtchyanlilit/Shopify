@@ -1,13 +1,13 @@
+import { useHistory } from "react-router-dom";
 import styles from "./category-item.module.scss";
-import { useState } from "react";
 
 const CategoryItem = (props) => {
   const { category } = props;
 
-  const [data, setData] = useState({ name: "Narek" });
+  const history = useHistory();
 
   const handleClick = () => {
-    setData({ ...data, age: 62 });
+    history.push(`/shop/${category.routeName}`);
   };
 
   return (
