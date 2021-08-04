@@ -22,18 +22,17 @@ const Header = (props) => {
   const handleClick = () => {
     history.push("/home");
   };
-  console.log(user)
 
   const toggleCartDropdown = () => setCartIsOpen(!cartIsOpen);
 
   const handleSignInSignOutClick = () => {
     if (!user) {
-        history.push("/auth");
+      history.push("/auth");
     } else {
-        // TODO clear user data
-        clearUserData();
+      // TODO clear user data
+      clearUserData();
     }
-};
+  };
 
   return (
     <header className={styles.container}>
@@ -46,21 +45,24 @@ const Header = (props) => {
           CONTACTS
         </Link>
         <div className={styles.item} onClick={handleSignInSignOutClick}>
-                    {!user ? "SIGN IN" : "SIGN OUT"}
-                </div>
-                {user && (
-                    <OutsideClickHandler disabled={!cartIsOpen} onOutsideClick={toggleCartDropdown}>
-                        <div className={styles.item}>
-                            <div className={styles.cart} onClick={toggleCartDropdown}>
-                                <BagSVG className={styles.bag} />
-                                {!!shopItemsCount && (
-                                    <span className={styles.count}>{shopItemsCount}</span>
-                                )}
-                            </div>
-                            {cartIsOpen && <CartDropdown />}
-            </div>
-            </OutsideClickHandler>
+          {!user ? "SIGN IN" : "SIGN OUT"}
+        </div>
+        {user && (
+          <OutsideClickHandler
+            disabled={!cartIsOpen}
+            onOutsideClick={toggleCartDropdown}
+          >
+            <div className={styles.item}>
+              <div className={styles.cart} onClick={toggleCartDropdown}>
+                <BagSVG className={styles.bag} />
+                {!!shopItemsCount && (
+                  <span className={styles.count}>{shopItemsCount}</span>
                 )}
+              </div>
+              {cartIsOpen && <CartDropdown />}
+            </div>
+          </OutsideClickHandler>
+        )}
       </nav>
     </header>
   );

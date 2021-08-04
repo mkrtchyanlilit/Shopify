@@ -8,8 +8,8 @@ import shopReducer from "./shop/shop.reducer";
 import authReducer from "./auth/auth.reducer";
 
 
-export const persistConfig = {
-    key: "root",
+export const authPersistConfig = {
+    key: "auth",
     storage: localStorage,
     whitelist: ["shop"],
     whitelist: ["shop", "auth"],
@@ -18,7 +18,7 @@ export const persistConfig = {
 const rootReducer = combineReducers({
     common: commonReducer,
     shop: shopReducer,
-    auth: authReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
 });
 
-export default persistReducer(persistConfig, rootReducer);
+export default rootReducer;

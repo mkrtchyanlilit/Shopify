@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 // BASE COMPONENTS
 import WrapperLoader from "src/components/wrapper-loader/WrapperLoader.component";
@@ -13,6 +14,7 @@ import styles from "./shop.module.scss";
 const Shop = ({ history }) => {
   const [shopState, setShopState] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { modalIsShown } = useSelector((store) => store.shop);
     useEffect(() => {
         const getShopData = async () => {
             try {
@@ -61,7 +63,7 @@ const Shop = ({ history }) => {
                         />
                     );
                 })}
-                <ShopModal />
+                {modalIsShown && <ShopModal />}
             </div>
         </WrapperLoader>
     );
