@@ -1,5 +1,5 @@
 import types from "./auth.types";
-import axios from "src/configs/axios.config";
+import authApi from "./auth.api";
 
 export const clearUserData = () => ({
     type: types.CLEAR_USER_DATA,
@@ -23,7 +23,7 @@ const userSignInAsyncFailure = (errorMessage) => ({
 export const userSignInAsync = (userInputData) => async(dispatch) => {
     dispatch(userSignInAsyncStart());
     try {
-        const result = await axios.post("auth/login", userInputData);
+        const result = await authApi.getUser(userInputData);
         const data = result.data.data;
         dispatch(userSignInAsyncSuccess(data));
         return true;
