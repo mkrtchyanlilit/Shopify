@@ -1,12 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
-
+import { useHistory } from "react-router-dom";
 import Button from "src/components/button/Button.component";
 
 import styles from "./cart-dropdown.module.scss";
 
 const CartDropdown = (props) => {
-  const { shopItems } = props;
+  const { shopItems, toggleCartDropdown } = props;
+  const history = useHistory();
+
+  const handleCheckOutClick = () => {
+      history.push("/checkout");
+      toggleCartDropdown();
+  };
   return (
     <div className={styles.container}>
       {shopItems.length ? (
@@ -31,7 +37,7 @@ const CartDropdown = (props) => {
               );
             })}
           </div>
-          <Button>Go to checkout</Button>
+          <Button onClick={handleCheckOutClick}>Go to checkout</Button>
         </>
       ) : (
         <div className={styles.emptyWrapper}>
