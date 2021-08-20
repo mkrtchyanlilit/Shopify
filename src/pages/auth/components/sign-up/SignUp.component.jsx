@@ -1,15 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
 import Button from "src/components/button/Button.component";
 import Input from "src/components/input/Input.component";
+import useInput from "src/hooks/useInput.hook";
 
 const SignUp = () => {
-  const [inputState, setInputState] = useState({});
-
-  const handleInput = (event) => {
-    const { name, value } = event.target;
-    setInputState({ ...inputState, [name]: value });
-  };
+  const { inputState, handleInput } = useInput();
 
   const handleSubmit = async (event) => {
     event.preventDefault();

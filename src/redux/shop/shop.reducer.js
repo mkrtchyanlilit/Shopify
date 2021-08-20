@@ -1,5 +1,9 @@
 import types from "./shop.types";
-import { updateFavorites, decreaseFavoritesItemCount } from "./shop.utils";
+import {
+  updateFavorites,
+  decreaseFavoritesItemCount,
+  deleteFromFavorites,
+} from "./shop.utils";
 
 const INITIAL_STATE = {
   favorites: [],
@@ -38,7 +42,11 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         favorites: decreaseFavoritesItemCount(state.favorites, payload),
       };
-
+    case types.DELETE_FROM_FAVORITES:
+      return {
+        ...state,
+        favorites: deleteFromFavorites(state.favorites, payload),
+      };
     case types.SET_MODAL_STATE:
       return { ...state, modalIsShown: payload };
     default:

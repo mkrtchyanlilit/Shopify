@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import {
   addToFavorites,
   decreaseFavoritesItemCount,
+  deleteFromFavorites,
 } from "src/redux/shop/shop.actions";
 import styles from "./table-row.module.scss";
 
@@ -38,7 +39,12 @@ const TableRow = (props) => {
         <div>{rowData.price}</div>
       </td>
       <td>
-        <span>X</span>
+        <span
+          className="u-cursor--pointer"
+          onClick={() => dispatch(deleteFromFavorites(rowData))}
+        >
+          X
+        </span>
       </td>
     </tr>
   );

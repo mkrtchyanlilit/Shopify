@@ -59,6 +59,11 @@ export const decreaseFavoritesItemCount = (selectedShopItem) => ({
   payload: selectedShopItem,
 });
 
+export const deleteFromFavorites = (selectedShopItem) => ({
+  type: types.DELETE_FROM_FAVORITES,
+  payload: selectedShopItem,
+});
+
 export const setModalState = (isShown) => ({
   type: types.SET_MODAL_STATE,
   payload: isShown,

@@ -38,7 +38,7 @@ const Header = (props) => {
     <header className={styles.container}>
       <CrownSVG className="u-cursor--pointer" onClick={() => history.push("/home")} />
       <nav className={styles.nav}>
-        <Link to="/auth" className={styles.link}>
+        <Link to="/auth" className={styles.link} >
           SHOP
         </Link>
         <Link to="/contacts" className={styles.link}>

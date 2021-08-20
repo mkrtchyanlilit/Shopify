@@ -15,7 +15,7 @@ const Shop = ({ history }) => {
     const { categories, isLoading, shopIsLoading, shopData } = useSelector((store) => store.shop);
   useEffect(() => {
     dispatch(getShopDataAsync());
-  }, []);
+  }, [dispatch]);
   const categoriesList = categories.map((category) => category.routeName);
   const handleShopCategoryClick = (category) => {
     history.push(`/shop/${category}`);
