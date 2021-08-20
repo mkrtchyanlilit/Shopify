@@ -38,10 +38,10 @@ const Header = (props) => {
     <header className={styles.container}>
       <CrownSVG className="u-cursor--pointer" onClick={() => history.push("/home")} />
       <nav className={styles.nav}>
-        <Link to="/auth" className={styles.item}>
+        <Link to="/auth" className={styles.link}>
           SHOP
         </Link>
-        <Link to="/contacts" className={styles.item}>
+        <Link to="/contacts" className={styles.link}>
           CONTACTS
         </Link>
         <div className={styles.item} onClick={handleSignInSignOutClick}>
@@ -52,7 +52,7 @@ const Header = (props) => {
             disabled={!cartIsOpen}
             onOutsideClick={toggleCartDropdown}
           >
-            <div className={styles.item}>
+            <div className={styles.link}>
               <div className={styles.cart} onClick={toggleCartDropdown}>
                 <BagSVG className={styles.bag} />
                 {!!shopItemsCount && (

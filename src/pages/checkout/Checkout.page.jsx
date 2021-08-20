@@ -3,6 +3,8 @@ import TableRow from "./table-row/TableRow.component";
 import styles from "./checkout.module.scss";
 import Button from "src/components/button/Button.component";
 
+import totalPrice from "./utils/totalPrice";
+
 const Checkout = () => {
   const favorites = useSelector((state) => state.shop.favorites);
 
@@ -25,7 +27,7 @@ const Checkout = () => {
         </tbody>
       </table>
       <div className={styles.bottom}>
-        <div className={styles.total}>TOTAL: $ COUNT</div>
+        <div className={styles.total}>TOTAL: $ {totalPrice(favorites)}</div>
         <Button>Pay Now</Button>
       </div>
     </div>

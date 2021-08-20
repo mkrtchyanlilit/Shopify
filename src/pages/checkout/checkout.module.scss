@@ -4,6 +4,7 @@
   margin-top: 20px;
   .table {
     width: 100%;
+    text-align: left;
     th,
     td {
       padding: 20px 0;
@@ -22,17 +23,16 @@
       tr {
         td {
           vertical-align: middle;
-          text-align: center;
-        }
       }
     }
-
+  }
     .image {
       width: 100px;
     }
   }
 
   .bottom {
+    margin-top: 25px;
     display: flex;
     align-items: flex-end;
     flex-direction: column;

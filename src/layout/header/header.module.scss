@@ -1,37 +1,40 @@
 .container {
-    flex: 0 0 80px;
+  flex: 0 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  .nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
-    .nav {
-        display: flex;
-        align-items: center;
-        white-space: pre;
-        .item {
-            position: relative;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-            .cart {
-                user-select: none;
-                cursor: pointer;
-                .bag {
-                    height: 30px;
-                }
-                .count {
-                    position: absolute;
-                    top: 60%;
-                    left: 50%;
-                    // transform: translate(-50%, -50%);
-                    transform: translateX(-50%) translateY(-50%);
-                    font-size: 14px;
-                }
-            }
-        }
-        &> :not(:last-child) {
-            margin-right: 20px;
-            min-width: 50px;
-        }
+    white-space: pre;
+    .link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
+
+    .item {
+      position: relative;
+      .cart {
+        user-select: none;
+        cursor: pointer;
+        .bag {
+          height: 40px;
+        }
+        .count {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          // transform: translate(-50%, -50%);
+          transform: translateX(-50%) translateY(-50%);
+          font-size: 14px;
+        }
+      }
+    }
+    & > :not(:last-child) {
+      margin-right: 20px;
+      min-width: 50px;
+    }
+  }
 }

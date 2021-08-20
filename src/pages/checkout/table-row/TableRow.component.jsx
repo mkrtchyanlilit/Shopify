@@ -1,7 +1,20 @@
+import { useDispatch } from "react-redux";
+import {
+  addToFavorites,
+  decreaseFavoritesItemCount,
+} from "src/redux/shop/shop.actions";
 import styles from "./table-row.module.scss";
 
 const TableRow = (props) => {
+  const dispatch = useDispatch();
   const { rowData } = props;
+
+  const decreaseCount = () => {
+    dispatch(decreaseFavoritesItemCount(rowData));
+  };
+  const increaseCount = () => {
+    dispatch(addToFavorites(rowData));
+  };
   return (
     <tr className={styles.container}>
       <td>
@@ -11,7 +24,15 @@ const TableRow = (props) => {
         <div>{rowData.name}</div>
       </td>
       <td>
-        <div>{rowData.count}</div>
+        <div className={styles.quantity}>
+          <div onClick={decreaseCount} className="u-cursor--pointer">
+            {"<"}
+          </div>
+          <div>{rowData.count}</div>
+          <div onClick={increaseCount} className="u-cursor--pointer">
+            {">"}
+          </div>
+        </div>
       </td>
       <td>
         <div>{rowData.price}</div>
