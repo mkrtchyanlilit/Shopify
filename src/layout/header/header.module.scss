@@ -8,19 +8,22 @@
     display: flex;
     align-items: center;
     white-space: pre;
+
     .link {
       text-decoration: none;
       color: inherit;
       cursor: pointer;
+      user-select: none;
     }
 
     .item {
       position: relative;
+
       .cart {
         user-select: none;
         cursor: pointer;
         .bag {
-          height: 40px;
+          height: 30px;
         }
         .count {
           position: absolute;

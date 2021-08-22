@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import styles from "./empty-data-message.module.scss";
+import { Container } from "./emptyDataMessage.styled";
 
 const EmptyDataMessage = (props) => {
-  const { children } = props;
+  const { children, height } = props;
 
   const favorites = useSelector((state) => state.shop.favorites);
   const hasData = !!favorites.length;
@@ -10,9 +11,9 @@ const EmptyDataMessage = (props) => {
   return hasData ? (
     children
   ) : (
-    <div className={styles.container}>
+    <Container height={height} className={styles.container}>
       <div>{message}</div>
-    </div>
+    </Container>
   );
 };
 

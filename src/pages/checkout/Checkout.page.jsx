@@ -13,7 +13,11 @@ const Checkout = () => {
     <div className={styles.container}>
       <h1>Process your checkout</h1>
 
-      <EmptyDataMessage message="There is no selected items" hasData={favorites.length}>
+      <EmptyDataMessage
+        height="35"
+        message="There is no selected items"
+        hasData={favorites.length}
+      >
         <table className={styles.table}>
           <thead>
             <tr>

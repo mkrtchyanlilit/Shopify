@@ -1,14 +1,22 @@
+import { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { AppContext } from "src/contexts/App.context";
 import styles from "./category-item.module.scss";
 
 const CategoryItem = (props) => {
   const { category } = props;
+  const { trackNum, setTrackNum, name } = useContext(AppContext);
 
   const history = useHistory();
 
+  console.log(name);
+
   const handleClick = () => {
+    setTrackNum(trackNum + 1);
     history.push(`/shop/${category.routeName}`);
   };
+
+  console.log(trackNum);
 
   return (
     <li className={styles.container} onClick={handleClick}>
