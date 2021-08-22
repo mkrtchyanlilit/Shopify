@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shopify/static/css/main.52fcb50b.chunk.css",
+    "main.js": "/shopify/static/js/main.069e3d96.chunk.js",
+    "main.js.map": "/shopify/static/js/main.069e3d96.chunk.js.map",
+    "runtime-main.js": "/shopify/static/js/runtime-main.3dd40b2f.js",
+    "runtime-main.js.map": "/shopify/static/js/runtime-main.3dd40b2f.js.map",
+    "static/js/2.8b5a7d6f.chunk.js": "/shopify/static/js/2.8b5a7d6f.chunk.js",
+    "static/js/2.8b5a7d6f.chunk.js.map": "/shopify/static/js/2.8b5a7d6f.chunk.js.map",
+    "index.html": "/shopify/index.html",
+    "static/css/main.52fcb50b.chunk.css.map": "/shopify/static/css/main.52fcb50b.chunk.css.map",
+    "static/js/2.8b5a7d6f.chunk.js.LICENSE.txt": "/shopify/static/js/2.8b5a7d6f.chunk.js.LICENSE.txt",
+    "static/media/crown.074141d6.svg": "/shopify/static/media/crown.074141d6.svg",
+    "static/media/shopping-bag.3cdf4d48.svg": "/shopify/static/media/shopping-bag.3cdf4d48.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3dd40b2f.js",
+    "static/js/2.8b5a7d6f.chunk.js",
+    "static/css/main.52fcb50b.chunk.css",
+    "static/js/main.069e3d96.chunk.js"
+  ]
+}
